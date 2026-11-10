@@ -1,9 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <title>Yeeee man</title>
-    </head>
-    <body>
-        <h1>Github page test for training</h1>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Only this site and the media bucket (VITE_MEDIA_URL) may be loaded from. -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev; media-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev; connect-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>VOID/OS 98</title>
+    <link rel="icon" href="/icons/void.svg" />
+    <script type="module" crossorigin src="/assets/index-BSFYTLrq.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CVx6Q9CE.css">
+  </head>
+  <body>
+    <header id="topbar" data-testid="topbar"></header>
+
+    <!-- Everything above the taskbar. Icons sit underneath the windows layer. -->
+    <main id="desktop" data-testid="desktop">
+      <ul id="desktop-icons" aria-label="Desktop"></ul>
+      <div id="windows"></div>
+    </main>
+
+    <aside id="mini-player" data-testid="mini-player" aria-label="Mini player" hidden></aside>
+    <nav id="start-menu" data-testid="start-menu" hidden></nav>
+    <footer id="taskbar" data-testid="taskbar"></footer>
+
+  </body>
 </html>
