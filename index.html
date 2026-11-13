@@ -3,16 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Only this site and the media bucket (VITE_MEDIA_URL) may be loaded from. -->
+    <!-- Only this site and the media bucket (VITE_MEDIA_URL) may be loaded from.
+         'wasm-unsafe-eval' and blob: workers are for the 3D models' Draco
+         decoder (src/apps/projects/model-viewer.js): it compiles WebAssembly
+         in a worker that three.js builds from public/draco/. blob: in
+         connect-src is for the textures inside a .glb, which three.js reads
+         through blob: addresses (src/apps/projects/place-viewer.js). -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev; media-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev; connect-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
+      content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev; media-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev; connect-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev blob:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>VOID/OS 98</title>
     <link rel="icon" href="/icons/void.svg" />
-    <script type="module" crossorigin src="/assets/index-D1_1XIYT.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CShsMUMb.css">
+    <script type="module" crossorigin src="/assets/index-Bi9-STzm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CAJEUMzx.css">
   </head>
   <body>
     <header id="topbar" data-testid="topbar"></header>
