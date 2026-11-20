@@ -8,16 +8,22 @@
          decoder (src/apps/projects/model-viewer.js): it compiles WebAssembly
          in a worker that three.js builds from public/draco/. blob: in
          connect-src is for the textures inside a .glb, which three.js reads
-         through blob: addresses (src/apps/projects/place-viewer.js). -->
+         through blob: addresses (src/apps/projects/place-viewer.js).
+         The Radio app (src/apps/radio/) plays live stations hosted anywhere:
+         https: in media-src for the streams, and in connect-src for the
+         station directory and the HLS streams hls.js downloads itself;
+         blob: in media-src is where hls.js hands the sound to <audio>.
+         frame-src is for Mistral's web build, which plays in a frame from
+         the media bucket (src/apps/games/mistral.js, layouts/showcase.js). -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev; media-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev; connect-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev blob:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
+      content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev blob:; media-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev https: blob:; connect-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev blob: https:; font-src 'self'; frame-src 'self' https://pub-cf301a052334496f8c6e51e2142883fa.r2.dev; object-src 'none'; base-uri 'self'; form-action 'none'"
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>VOID/OS 98</title>
     <link rel="icon" href="/icons/void.svg" />
-    <script type="module" crossorigin src="/assets/index-4TeZjr-5.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CISwRyGg.css">
+    <script type="module" crossorigin src="/assets/index-F-hVDm6p.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-COaD4Gfi.css">
   </head>
   <body>
     <header id="topbar" data-testid="topbar"></header>
