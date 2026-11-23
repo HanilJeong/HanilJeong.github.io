@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- Only this site and the media bucket (VITE_MEDIA_URL) may be loaded from.
+         'wasm-unsafe-eval' and blob: workers are for the 3D models' Draco
+         decoder (src/apps/projects/model-viewer.js): it compiles WebAssembly
+         in a worker that three.js builds from public/draco/. blob: in
+         connect-src is for the textures inside a .glb, which three.js reads
+         through blob: addresses (src/apps/projects/place-viewer.js).
+         The Radio app (src/apps/radio/) plays live stations hosted anywhere:
+         https: in media-src for the streams, and in connect-src for the
+         station directory and the HLS streams hls.js downloads itself;
+         blob: in media-src is where hls.js hands the sound to <audio>.
+         frame-src is for Mistral's web build, which plays in a frame from
+         the media bucket (src/apps/games/mistral.js, layouts/showcase.js).
+         camWeb's face tracker (src/apps/camweb/effects/face-tracker.js) is
+         WebAssembly too: its loader script is the site's own, its runtime
+         and its model are fetched from the media bucket (connect-src). -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' https://media.hanil.garden blob:; media-src 'self' https://media.hanil.garden https: blob:; connect-src 'self' https://media.hanil.garden blob: https:; font-src 'self'; frame-src 'self' https://media.hanil.garden; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Hanil.garden</title>
+    <link rel="icon" href="/icons/palm.svg" />
+    <script type="module" crossorigin src="/assets/index-Gm8sRWiD.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CBSFaC18.css">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hanil.garden" />
+    <meta property="og:title" content="Borderlife" />
+    <meta property="og:url" content="https://hanil.garden/borderlife" />
+    <meta name="description" content="Documentary photography book · South Korea · 2019" />
+    <meta property="og:description" content="Documentary photography book · South Korea · 2019" />
+    <meta property="og:image" content="https://media.hanil.garden/projects/borderlife/book-photo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <header id="topbar" data-testid="topbar"></header>
+
+    <!-- Everything above the taskbar. Icons sit underneath the windows layer. -->
+    <main id="desktop" data-testid="desktop">
+      <ul id="desktop-icons" aria-label="Desktop"></ul>
+      <div id="windows"></div>
+    </main>
+
+    <aside id="mini-player" data-testid="mini-player" aria-label="Mini player" hidden></aside>
+    <nav id="start-menu" data-testid="start-menu" hidden></nav>
+    <footer id="taskbar" data-testid="taskbar"></footer>
+
+  </body>
+</html>
