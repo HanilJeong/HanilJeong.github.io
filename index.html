@@ -14,7 +14,10 @@
          station directory and the HLS streams hls.js downloads itself;
          blob: in media-src is where hls.js hands the sound to <audio>.
          frame-src is for Mistral's web build, which plays in a frame from
-         the media bucket (src/apps/games/mistral.js, layouts/showcase.js). -->
+         the media bucket (src/apps/games/mistral.js, layouts/showcase.js).
+         camWeb's face tracker (src/apps/camweb/effects/face-tracker.js) is
+         WebAssembly too: its loader script is the site's own, its runtime
+         and its model are fetched from the media bucket (connect-src). -->
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' https://media.hanil.garden blob:; media-src 'self' https://media.hanil.garden https: blob:; connect-src 'self' https://media.hanil.garden blob: https:; font-src 'self'; frame-src 'self' https://media.hanil.garden; object-src 'none'; base-uri 'self'; form-action 'none'"
@@ -22,8 +25,8 @@
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Hanil.garden</title>
     <link rel="icon" href="/icons/palm.svg" />
-    <script type="module" crossorigin src="/assets/index-m2mELQBs.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-3RL-cgD0.css">
+    <script type="module" crossorigin src="/assets/index-DU2KrPrf.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CB3uu3Su.css">
   </head>
   <body>
     <header id="topbar" data-testid="topbar"></header>
