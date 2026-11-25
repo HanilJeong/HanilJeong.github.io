@@ -17,16 +17,19 @@
          the media bucket (src/apps/games/mistral.js, layouts/showcase.js).
          camWeb's face tracker (src/apps/camweb/effects/face-tracker.js) is
          WebAssembly too: its loader script is the site's own, its runtime
-         and its model are fetched from the media bucket (connect-src). -->
+         and its model are fetched from the media bucket (connect-src).
+         static.cloudflareinsights.com in script-src is Cloudflare Web
+         Analytics' counter (src/main.js), loaded only on the published site;
+         it reports to cloudflareinsights.com (https: in connect-src). -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' https://media.hanil.garden blob:; media-src 'self' https://media.hanil.garden https: blob:; connect-src 'self' https://media.hanil.garden blob: https:; font-src 'self'; frame-src 'self' https://media.hanil.garden; object-src 'none'; base-uri 'self'; form-action 'none'"
+      content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://static.cloudflareinsights.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' https://media.hanil.garden blob:; media-src 'self' https://media.hanil.garden https: blob:; connect-src 'self' https://media.hanil.garden blob: https:; font-src 'self'; frame-src 'self' https://media.hanil.garden; object-src 'none'; base-uri 'self'; form-action 'none'"
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Hanil.garden</title>
     <link rel="icon" href="/icons/palm.svg" />
-    <script type="module" crossorigin src="/assets/index-DkTMbfoP.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Clj0HHbK.css">
+    <script type="module" crossorigin src="/assets/index-K4VWUW8C.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DJZOkKwY.css">
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Hanil.garden" />
     <meta property="og:title" content="Zohra's Odyssey" />
